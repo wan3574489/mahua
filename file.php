@@ -3,6 +3,8 @@ if($_POST && isset($_POST['data'])){
     $filename = $_POST['filename'];
     @copy(__DIR__."/store/".$filename.".md",__DIR__."/store/".$filename.".md.back");
     if(file_put_contents(__DIR__."/store/".$filename.".md",$_POST['data'])){
+        file_put_contents(__DIR__."/store/".$filename.".html",$_POST['parse_data']);
+
         echo json_encode(array('status'=>1));
         exit;
     }

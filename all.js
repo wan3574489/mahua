@@ -3662,9 +3662,11 @@ $(function () {
     $("#mahua-exportHTML").click(function () {
         var a = prompt("保存的文件名", e), b = new BlobBuilder;
         if (a !== null) {
-            E && o(c.getSession().getValue() + "\nEdit By [MaHua](http://mahua.jser.me)");
+            E && o(c.getSession().getValue() + "\n");
             var d = r.document.documentElement.outerHTML, d = d.replace(/<script[^<]*><[^>]*>/gm, "").replace(/<style\s*id="hibot[^>]*>[^<]*<[^>]*>/gm, "");
             b.append(d);
+
+            console.log(b);
             saveAs(b.getBlob("text/html;charset=utf-8"), (a || e || "untitled") + ".html")
         }
     });
@@ -3672,7 +3674,11 @@ $(function () {
     $("#mahua-savemk").click(function(){
         var $data = c.getSession().getValue();
         var filename = d("curSession");
-        $.post("file.php",{data:$data,filename:filename},function(d){
+        //解析之后的值
+
+        var b = new BlobBuilder;
+        var parse_data = r.document.documentElement.outerHTML;
+        $.post("file.php",{data:$data,filename:filename,parse_data: parse_data},function(d){
             console.log(1);
             alert(d.status);
         },'json');
