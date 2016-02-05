@@ -3572,6 +3572,9 @@ $(function () {
             content: '#Standard Markdown\n\n##Strong and Emphasize\n```\n*emphasize*   **strong**\n_emphasize_   __strong__\n```\n##Links and Email\nInline:\n```\nAn [example](http://url.com/ "Title")\n```\nReference-style labels (titles are optional):\n```\n\nAn [example][id]. Then, anywhere\nelse in the doc, define the link:\n\n  [id]: http://example.com/  "Title"\n```\nEmail:\n```\nAn email <example@example.com> link.\n```\n\n##Images\nInline (titles are optional):\n```\n![alt text](/path/img.jpg "Title")\n```\nReference-style:\n```\n![alt text][id]\n\n[id]: /url/to/img.jpg "Title"\n```\n##Headers\n```\nSetext-style:\n\nHeader 1\n========\n\nHeader 2\n--------\n```\natx-style (closing #’s are optional):\n```\n# Header 1 #\n\n## Header 2 ##\n\n###### Header 6\n```\n##Lists\nOrdered, without paragraphs:\n```\n1.  Foo\n2.  Bar\n```\nUnordered, with paragraphs:\n```\n*   A list item.\n\n    With multiple paragraphs.\n\n*   Bar\n```\nYou can nest them:\n```\n*   Abacus\n    * answer\n*   Bubbles\n    1.  bunk\n    2.  bupkis\n        * BELITTLER\n    3. burper\n*   Cunning\n```\n##Blockquotes\n```\n> Email-style angle brackets\n> are used for blockquotes.\n\n> > And, they can be nested.\n\n> #### Headers in blockquotes\n> \n> * You can quote a list.\n> * Etc.\n```\n##Inline Code\n```\n`<code>` spans are delimited\nby backticks.\n\nYou can include literal backticks\nlike `` `this` ``.\n```\n##Block Code\nIndent every line of a code block by at least 4 spaces or 1 tab.\n```\nThis is a normal paragraph.\n\n    This is a preformatted\n    code block.\n```\n##Horizontal Rules\nThree or more dashes or asterisks:\n```\n---\n\n* * *\n\n- - - -\n```\n##Hard Line Breaks\nEnd a line with two or more spaces:\n```\nRoses are red,   \nViolets are blue.```'
         }
     }, m = 0, p = d("curEditorTheme", "monokai"), q = d("curSyncRoll", 0), F = d("curPreviewTheme", "Clearness");
+
+    window.aaa = h;
+
     $("#mahua-keyboard").prop("checked", parseInt(d("keyboardBinding", 0)));
     x(parseInt(d("keyboardBinding", 0)));
     $("#mahua-linenum").prop("checked", null !== d("lineNum") ? parseInt(d("lineNum")) : 1);
@@ -3602,7 +3605,7 @@ $(function () {
         $("#mahua-previewThemes").append('<option value="' + b + '" ' + (b == F ? "selected" : "") + ">" + b + "</option>")
     });
 
-    null == d("curSession") && (f("curSession", "untitled"), s("untitled"), e = "untitled", null == j(e) && f("markContent_" + e, '![mahua](mahua-logo.jpg)\n##MaHua是什么?\n一个在线编辑markdown文档的编辑器\n\n向Mac下优秀的markdown编辑器mou致敬\n\n##MaHua有哪些功能？\n\n* 方便的`导入导出`功能\n    *  直接把一个markdown的文本文件拖放到当前这个页面就可以了\n    *  导出为一个html格式的文件，样式一点也不会丢失\n* 编辑和预览`同步滚动`，所见即所得（右上角设置）\n* `VIM快捷键`支持，方便vim党们快速的操作 （右上角设置）\n* 强大的`自定义CSS`功能，方便定制自己的展示\n* 有数量也有质量的`主题`,编辑器和预览区域\n* 完美兼容`Github`的markdown语法\n* 预览区域`代码高亮`\n* 所有选项自动记忆\n\n##有问题反馈\n在使用中有任何问题，欢迎反馈给我，可以用以下联系方式跟我交流\n\n* 邮件(dev.hubo#gmail.com, 把#换成@)\n* QQ: 287759234\n* weibo: [@草依山](http://weibo.com/ihubo)\n* twitter: [@ihubo](http://twitter.com/ihubo)\n\n##捐助开发者\n在兴趣的驱动下,写一个`免费`的东西，有欣喜，也还有汗水，希望你喜欢我的作品，同时也能支持一下。\n当然，有钱捧个钱场（右上角的爱心标志，支持支付宝和PayPal捐助），没钱捧个人场，谢谢各位。\n\n##感激\n感谢以下的项目,排名不分先后\n\n* [mou](http://mouapp.com/) \n* [ace](http://ace.ajax.org/)\n* [jquery](http://jquery.com)\n\n##关于作者\n\n```javascript\n  var ihubo = {\n    nickName  : "草依山",\n    site : "http://jser.me"\n  }\n```'));
+    null == d("curSession") && (f("curSession", "index"), s("index"), e = "index", null == j(e) && f("markContent_" + e, '![mahua](mahua-logo.jpg)\n##MaHua是什么?\n一个在线编辑markdown文档的编辑器\n\n向Mac下优秀的markdown编辑器mou致敬\n\n##MaHua有哪些功能？\n\n* 方便的`导入导出`功能\n    *  直接把一个markdown的文本文件拖放到当前这个页面就可以了\n    *  导出为一个html格式的文件，样式一点也不会丢失\n* 编辑和预览`同步滚动`，所见即所得（右上角设置）\n* `VIM快捷键`支持，方便vim党们快速的操作 （右上角设置）\n* 强大的`自定义CSS`功能，方便定制自己的展示\n* 有数量也有质量的`主题`,编辑器和预览区域\n* 完美兼容`Github`的markdown语法\n* 预览区域`代码高亮`\n* 所有选项自动记忆\n\n##有问题反馈\n在使用中有任何问题，欢迎反馈给我，可以用以下联系方式跟我交流\n\n* 邮件(dev.hubo#gmail.com, 把#换成@)\n* QQ: 287759234\n* weibo: [@草依山](http://weibo.com/ihubo)\n* twitter: [@ihubo](http://twitter.com/ihubo)\n\n##捐助开发者\n在兴趣的驱动下,写一个`免费`的东西，有欣喜，也还有汗水，希望你喜欢我的作品，同时也能支持一下。\n当然，有钱捧个钱场（右上角的爱心标志，支持支付宝和PayPal捐助），没钱捧个人场，谢谢各位。\n\n##感激\n感谢以下的项目,排名不分先后\n\n* [mou](http://mouapp.com/) \n* [ace](http://ace.ajax.org/)\n* [jquery](http://jquery.com)\n\n##关于作者\n\n```javascript\n  var ihubo = {\n    nickName  : "草依山",\n    site : "http://jser.me"\n  }\n```'));
 
 
     e = d("curSession");
@@ -3630,7 +3633,7 @@ $(function () {
         w(this.value)
     });
     $("#mahua-changeSession").change(function () {
-        n(this.value)
+        //n(this.value)
     });
     $("#mahua-previewThemes").change(function () {
         "custom" == this.value ? showCustomCSSEditor() : v(this.value)
@@ -3668,13 +3671,34 @@ $(function () {
     //保存mk文件
     $("#mahua-savemk").click(function(){
         var $data = c.getSession().getValue();
-        $.post("file.php",{data:$data},function(d){
+        var filename = d("curSession");
+        $.post("file.php",{data:$data,filename:filename},function(d){
             console.log(1);
-        });
+            alert(d.status);
+        },'json');
     });
 
     $("#mahua-importSource").click(function () {
-        alert("请直接把文件拖放到此页面上")
+        //alert("请直接把文件拖放到此页面上");
+        var filename = prompt("输入要载入的名字");
+
+        $.get("file.php?filename="+filename,function($data){
+           if($data != -1){
+               //c.getSession().setValue($data);
+
+               var b = {};
+               b[filename] = {buildIn: 1,content:$data};
+               $.extend(h, b);
+               n(filename);
+               $("#mahua-changeSession").append('<option value="' + filename + '" selected>' + filename + "</option>");
+               c.focus();
+
+
+           }else{
+               alert("文件"+filename+"载入失败");
+           }
+        });
+
     });
     $("#mahua-donate").click(function () {
         $("#mahua-donate-detail").slideDown()
@@ -3703,8 +3727,9 @@ $(function () {
     });
 
     //load
-    $.get("file.php",function($data){
-
+    var filename = d("curSession");
+    //console.log(filename);
+    $.get("file.php?filename="+filename,function($data){
         c.getSession().setValue($data);
 
         c.getSession().on("change", function () {
