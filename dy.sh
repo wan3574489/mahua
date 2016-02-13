@@ -10,7 +10,7 @@ if [ -n "$1" ]
 then
     Branch=$1
 else
-    Branch=master
+    Branch='gh-pages'
 fi
 
 while getopts "b:e:" arg
