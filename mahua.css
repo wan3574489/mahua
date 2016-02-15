@@ -51,6 +51,9 @@ body{
   *zoom:1;
   *display:inline;
 }
+.mahua-save{
+    background:url('./save.png') no-repeat;
+}
 .mahua-config{
     background:url('./settings.png') no-repeat;
 }

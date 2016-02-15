@@ -3680,8 +3680,22 @@ $(function () {
         var parse_data = r.document.documentElement.outerHTML;
         $.post("file.php",{data:$data,filename:filename,parse_data: parse_data},function(d){
             console.log(1);
-            alert(d.status);
+            console.log(d.status);
+            if(d.status == 1){
+                alert("保存成功！");
+            }else{
+              if(typeof(d['message']) == 'undefined'){
+                alert("未知错误");
+              }else{
+                  alert(d['message']);
+              }
+            }
         },'json');
+    });
+
+    //外部保存
+    $("#mahua-save").click(function(){
+        $("#mahua-savemk").trigger("click");
     });
 
     $("#mahua-importSource").click(function () {
